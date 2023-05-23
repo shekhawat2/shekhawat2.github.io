@@ -24,7 +24,7 @@ export default function Home() {
           priority
         />
         </div>
-        <div className="fixed bottom-0">
+        <div className="fixed bottom-0 flex w-full items-end justify-center">
         <a className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
           href="https://shekhawat2.github.io"
           target="_blank"
