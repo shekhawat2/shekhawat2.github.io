@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex-col">
+    <main className="Main">
       <div className="flex flex-col items-center justify-between p-11 ">
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert "

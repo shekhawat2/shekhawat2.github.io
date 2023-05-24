@@ -1,5 +1,6 @@
-import Link from "next/link";
-import Styles from "../../styles/Styles.module.css";
+import fs from 'fs';
+import Link from 'next/link';
+import styles from '../../styles/Styles.module.css';
 
 // Mock data for demonstration
 const blogData = [
@@ -21,16 +22,18 @@ const blogData = [
 ];
 
 const Blog = () => (
-  <div>
-    <h1>Blog</h1>
-    {blogData.map((post) => (
-      <div key={post.slug} className={Styles.card}>
-        <h2>
+  <div className={styles.container}>
+    <h1 className={styles.heading}>Blog</h1>
+    <div className={styles.cardContainer}>
+      {blogData.map((post) => (
+        <div key={post.slug} className={styles.card}>
+          <h2>
           <Link href={`/blog/${post.slug}`}>{post.title}</Link>
-        </h2>
-        <p>{post.summary}</p>
-      </div>
-    ))}
+          </h2>
+          <p>{post.summary}</p>
+        </div>
+      ))}
+    </div>
   </div>
 );
 
