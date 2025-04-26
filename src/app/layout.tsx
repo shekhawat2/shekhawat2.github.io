@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
 
         {/* GestureLayout - Wraps only the animated content */}
-        <div className="flex flex-col flex-1 min-h-20">
+        <div className="flex flex-col flex-1 min-h-screen">
           <GestureLayout>{children}</GestureLayout>
         </div>
 
