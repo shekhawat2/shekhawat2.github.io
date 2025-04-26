@@ -11,6 +11,7 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setDirection] = useState<"left" | "right">("left");
 
   const handleTouchStart = (e: React.TouchEvent) => {

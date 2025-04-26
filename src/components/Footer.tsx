@@ -2,9 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type Props = {0};
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <div className="w-full py-4 fixed bottom-0 left-0 z-50 flex justify-center items-center">
       <Link
