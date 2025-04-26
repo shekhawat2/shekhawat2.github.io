@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { ReactNode, useRef, useState, useEffect } from "react";
 import PageWrapper from "./PageWrapper";
 
-const routes = ["/", "/about", "/projects", "/contact"];
+const routes = ["/", "/about", "/content", "/projects", "/contact"];
 
 export default function GestureLayout({ children }: { children: ReactNode }) {
   const router = useRouter();
