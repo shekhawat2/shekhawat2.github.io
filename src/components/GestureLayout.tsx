@@ -36,7 +36,7 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-      setDirection((prev) => prev ?? "null");
+      setDirection((prev) => prev ?? null);
   }, [pathname]);
 
   return (
