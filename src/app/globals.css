@@ -19,6 +19,7 @@
   }
 }
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
@@ -26,6 +27,8 @@ body {
   /* Fallback for browsers that don't support dvh */
   min-height: 100vh;
   min-height: 100dvh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-y: hidden; /* Prevent vertical scroll */
   display: block; /* Ensure the body behaves as a block-level element */
 }
 
