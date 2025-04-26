@@ -29,14 +29,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
 
         {/* GestureLayout - Wraps only the animated content */}
-        <div className="min-h-screen">
+        <div className="flex flex-col flex-1 min-h-20">
           <GestureLayout>{children}</GestureLayout>
         </div>
 
         {/* Footer - Fixed at the bottom, outside of GestureLayout */}
-        <div className="fixed bottom-0 left-0 w-full z-50">
-          <Footer />
-        </div>
+        <Footer />
       </body>
     </html>
   );
