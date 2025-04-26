@@ -1,5 +1,3 @@
-import PageWrapper from "@/components/PageWrapper";
-
 export default function AboutPage() {
   return (
       <div className="min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] flex flex-col items-center sm:items-start text-center sm:text-left">
