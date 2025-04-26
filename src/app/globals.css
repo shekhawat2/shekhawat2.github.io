@@ -26,16 +26,17 @@ body {
   /* Fallback for browsers that don't support dvh */
   min-height: 100vh;
   min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  display: block; /* Ensure the body behaves as a block-level element */
 }
 
 footer {
   position: fixed;
-  bottom: 7;
+  bottom: 0;
   width: 100%;
   text-align: center;
   display: flex;
-  gap: 7;
+  gap: 1rem;
   justify-content: center;
+  z-index: 1000; /* Ensure footer is always on top */
+  padding: 1rem;
 }

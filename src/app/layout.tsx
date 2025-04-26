@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import GestureLayout from "../components/GestureLayout";
 
@@ -24,8 +25,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Navbar */}
         <Navbar />
-        <GestureLayout>{children}</GestureLayout>
+
+        {/* GestureLayout - Wraps only the animated content */}
+        <div className="relative min-h-screen">
+          <GestureLayout>{children}</GestureLayout>
+        </div>
+
+        {/* Footer - Fixed at the bottom, outside of GestureLayout */}
+        <div className="fixed bottom-0 left-0 w-full z-50">
+          <Footer />
+        </div>
       </body>
     </html>
   );
