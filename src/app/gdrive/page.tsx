@@ -9,7 +9,7 @@ interface DriveFile {
   mimeType: string;
 }
 
-export default function ContentPage() {
+export default function GdrivePage() {
   const [driveFiles, setDriveFiles] = useState<DriveFile[]>([]);
 
   useEffect(() => {
