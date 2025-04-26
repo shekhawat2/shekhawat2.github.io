@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, usePathname } from "next/navigation";
-import { ReactNode, useRef, useState } from "react";
+import { ReactNode, useRef, useState, useEffect } from "react";
 import PageWrapper from "./PageWrapper";
 
 const routes = ["/", "/about", "/projects", "/contact"];
@@ -34,6 +34,10 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
       router.push(routes[currentIndex - 1]);
     }
   };
+
+  useEffect(() => {
+      setDirection((prev) => prev ?? "null");
+  }, [pathname]);
 
   return (
     <div
