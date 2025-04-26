@@ -1,17 +1,12 @@
 @import "tailwindcss";
 
+/* Light mode colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb; /* very light gray */
+  --foreground: #111111; /* almost black text */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark mode colors */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -24,12 +19,23 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  /* Fallback for browsers that don't support dvh */
   min-height: 100vh;
   min-height: 100dvh;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  overflow-y: hidden; /* Prevent vertical scroll */
-  display: block; /* Ensure the body behaves as a block-level element */
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: block;
+}
+
+/* Breathing animation */
+@keyframes breathingGradient {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
 }
 
 footer {
@@ -40,6 +46,6 @@ footer {
   display: flex;
   gap: 1rem;
   justify-content: center;
-  z-index: 1000; /* Ensure footer is always on top */
+  z-index: 1000;
   padding: 1rem;
 }
