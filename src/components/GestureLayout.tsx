@@ -2,6 +2,7 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { ReactNode, useRef, useState } from "react";
+import PageWrapper from "./PageWrapper";
 
 const routes = ["/", "/about", "/projects", "/contact"];
 
@@ -11,8 +12,7 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
 
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [_, setDirection] = useState<"left" | "right">("left");
+  const [direction, setDirection] = useState<"left" | "right" | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
@@ -25,6 +25,7 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
   const handleTouchEnd = () => {
     const deltaX = touchStartX.current - touchEndX.current;
     const currentIndex = routes.indexOf(pathname);
+
     if (deltaX > 50 && currentIndex < routes.length - 1) {
       setDirection("left");
       router.push(routes[currentIndex + 1]);
@@ -35,8 +36,12 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
-      {children}
+    <div
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <PageWrapper direction={direction}>{children}</PageWrapper>
     </div>
   );
 }
