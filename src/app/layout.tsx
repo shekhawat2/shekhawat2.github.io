@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* GestureLayout - Wraps only the animated content */}
         <div className="relative min-h-screen">
-          <GestureLayout>{children}</GestureLayout>
+          {children}
         </div>
 
         {/* Footer - Fixed at the bottom, outside of GestureLayout */}
