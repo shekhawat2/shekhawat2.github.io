@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type Props = {};
+type Props = {0};
 
 const Footer = (props: Props) => {
   return (
