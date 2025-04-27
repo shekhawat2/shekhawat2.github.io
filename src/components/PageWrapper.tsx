@@ -21,7 +21,7 @@ export default function PageWrapper({
   const variants = {
     initial: (dir: "left" | "right" | null) => ({
       x: dir === "left" ? 300 : dir === "right" ? -300 : 0,
-      opacity: 1,
+      opacity: 0,
     }),
     animate: {
       x: 0,
@@ -29,7 +29,7 @@ export default function PageWrapper({
     },
     exit: (dir: "left" | "right" | null) => ({
       x: dir === "left" ? -300 : dir === "right" ? 300 : 0,
-      opacity: 1,
+      opacity: 0,
     }),
   };
 
