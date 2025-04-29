@@ -26,10 +26,10 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
     const deltaX = touchStartX.current - touchEndX.current;
     const currentIndex = routes.indexOf(pathname);
 
-    if (deltaX > 50 && currentIndex < routes.length - 1) {
+    if (deltaX > 100 && currentIndex < routes.length - 1) {
       setDirection("left");
       router.push(routes[currentIndex + 1]);
-    } else if (deltaX < -50 && currentIndex > 0) {
+    } else if (deltaX < -100 && currentIndex > 0) {
       setDirection("right");
       router.push(routes[currentIndex - 1]);
     }
@@ -40,7 +40,7 @@ export default function GestureLayout({ children }: { children: ReactNode }) {
   }, [pathname]);
 
   return (
-    <div
+    <div className="min-h-screen"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}

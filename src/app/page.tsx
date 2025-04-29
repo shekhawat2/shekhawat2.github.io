@@ -2,17 +2,17 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-      <div className="flex flex-col items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col min-h-screen gap-[32px] row-start-2 items-center sm:items-start">
-          <Image
-            className="dark:invert"
-            src="/anand.svg"
-            alt="Anand logo"
-            width={180}
-            height={38}
-            priority
-          />
-        </main>
-      </div>
+    <div className="flex flex-col items-center justify-center gap-16 px-4 py-16 sm:px-20 sm:py-32 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 items-center sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/anand.svg"
+          alt="Anand logo"
+          width={180}
+          height={38}
+          priority
+        />
+      </main>
+    </div>
   );
 }

@@ -7,7 +7,7 @@ export default function ContentPage() {
   const pdfFiles = fileNames.filter((file) => file.endsWith(".pdf"));
 
   return (
-    <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)] flex flex-col text-left">
+    <div className="flex-grow p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] items-center">
       <h1 className="text-3xl font-bold mb-8">Available Files</h1>
 
       <ul className="space-y-4">

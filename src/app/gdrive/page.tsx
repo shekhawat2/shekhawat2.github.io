@@ -28,21 +28,21 @@ export default function GdrivePage() {
   }, []);
 
   return (
-    <div className="flex flex-col flex-1 min-h-screen p-8">
+    <div className="flex-grow p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] items-center">
       <h1 className="text-3xl font-bold mb-8">Available Files</h1>
 
-      <ul className="space-y-6">
+      <ul className="space-y-4">
         {driveFiles.map((file) => (
-          <li key={file.id} className="flex justify-between items-center border p-4 rounded-lg shadow-md">
-            <span className="text-lg font-medium break-all">{file.name}</span>
+          <li key={file.id} className="flex items-center justify-between gap-4 border p-4 rounded-lg shadow-md">
+            <span className="text-base font-medium break-words max-w-[60%]">{file.name}</span>
 
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               {/* View File */}
               <a
                 href={file.webViewLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md text-sm"
+                className="px-3 py-1 text-white bg-blue-600 hover:bg-blue-700 rounded-md text-xs"
               >
                 View
               </a>
@@ -51,7 +51,7 @@ export default function GdrivePage() {
               <a
                 href={`https://drive.google.com/uc?export=download&id=${file.id}`}
                 download
-                className="px-4 py-2 text-blue-600 border border-blue-600 hover:bg-blue-50 rounded-md text-sm"
+                className="px-3 py-1 text-blue-600 border border-blue-600 hover:bg-blue-50 rounded-md text-xs"
               >
                 Download
               </a>

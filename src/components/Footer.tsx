@@ -4,14 +4,23 @@ import Image from 'next/image';
 
 const Footer = () => {
   return (
-    <div className="bg-gray-900 py-1 w-full fixed bottom-0 left-0 z-50 flex justify-center items-center">
+    <footer
+      className="fixed bottom-0 left-0 w-full z-50 py-2 flex justify-center items-center
+                 will-change-transform transform-gpu"
+      style={{
+        transform: 'translateZ(0)',
+        WebkitTransform: 'translateZ(0)',
+        backfaceVisibility: 'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+      }}
+    >
       <Link
         className="flex items-center gap-2 px-4"
         href="https://shekhawat2.github.io"
         target="_blank"
         rel="noopener noreferrer"
       >
-        By{''}
+        By{' '}
         <Image
           src="/shekhawat.svg"
           alt="Shekhawat Logo"
@@ -21,7 +30,7 @@ const Footer = () => {
           priority
         />
       </Link>
-    </div>
+    </footer>
   );
 };
 
