@@ -25,16 +25,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Navbar */}
-        <Navbar />
-
-        {/* GestureLayout - Wraps only the animated content */}
-        <div className="min-h-screen">
-          <GestureLayout>{children}</GestureLayout>
+        <div className="min-h-screen flex flex-col">
+          <Navbar />
+          <main className="flex-grow">
+            <GestureLayout>{children}</GestureLayout>
+          </main>
+          <Footer />
         </div>
-
-        {/* Footer - Fixed at the bottom, outside of GestureLayout */}
-        <Footer />
       </body>
     </html>
   );
