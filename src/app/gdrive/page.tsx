@@ -31,6 +31,9 @@ export default function GdrivePage() {
     <div className="flex-grow p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] items-center">
       <h1 className="text-3xl font-bold mb-8">Available Files</h1>
 
+      {driveFiles.length === 0 ? (
+      <p className="flex flex-col text-gray-500 items-center text-xl">No files found.</p>
+      ) : (
       <ul className="space-y-4">
         {driveFiles.map((file) => (
           <li key={file.id} className="flex items-center justify-between gap-4 border p-4 rounded-lg shadow-md">
@@ -59,6 +62,7 @@ export default function GdrivePage() {
           </li>
         ))}
       </ul>
+    )}
     </div>
   );
 }
