@@ -8,7 +8,7 @@ export default function MdxIndexPage() {
     <ul className="space-y-4">
       {files.map(file => (
         <li key={file.slug}>
-          <Link href={`/mdx/${file.slug}`} className="text-blue-600 underline">
+          <Link href={`/articles/${file.slug}`} className="text-blue-600 underline">
             {file.title}
           </Link>
         </li>

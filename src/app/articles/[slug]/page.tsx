@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export async function generateStaticParams() {
-  const dir = path.join(process.cwd(), 'src/app/mdx');
+  const dir = path.join(process.cwd(), 'src/app/articles');
   const files = fs.readdirSync(dir).filter(file => file.endsWith('.mdx'));
 
   return files.map(file => ({
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 export default async function MdxPostPage({ params }: { params: { slug: string } }) {
-  const filePath = path.join(process.cwd(), 'src/app/mdx', `${params.slug}.mdx`);
+  const filePath = path.join(process.cwd(), 'src/app/articles', `${params.slug}.mdx`);
 
   if (!fs.existsSync(filePath)) {
     notFound();

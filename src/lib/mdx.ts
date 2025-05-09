@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const MDX_DIR = path.join(process.cwd(), 'src/app/mdx');
+const MDX_DIR = path.join(process.cwd(), 'src/app/articles');
 
 export function getAllMdxFiles() {
   const files = fs.readdirSync(MDX_DIR).filter(file => file.endsWith('.mdx'));
