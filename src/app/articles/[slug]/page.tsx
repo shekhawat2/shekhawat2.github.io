@@ -4,13 +4,6 @@ import matter from 'gray-matter';
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
-// 👇 Define props type for clarity
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
 export async function generateStaticParams() {
   const dir = path.join(process.cwd(), 'src/app/articles');
   const files = fs.readdirSync(dir).filter(file => file.endsWith('.mdx'));
@@ -20,7 +13,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function MdxPostPage({ params }: PageProps) {
+// ✅ DON'T use PageProps, just inline the type
+export default async function MdxPostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const filePath = path.join(process.cwd(), 'src/app/articles', `${params.slug}.mdx`);
 
   if (!fs.existsSync(filePath)) {
@@ -33,9 +31,7 @@ export default async function MdxPostPage({ params }: PageProps) {
   return (
     <article className="prose max-w-none">
       {data.title && (
-        <h1 className="text-3xl font-bold mb-6">
-          {data.title || params.slug}
-        </h1>
+        <h1 className="text-3xl font-bold mb-6">{data.title || params.slug}</h1>
       )}
       <MDXRemote source={content} />
     </article>
