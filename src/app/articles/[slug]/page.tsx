@@ -1,3 +1,5 @@
+// src/app/articles/[slug]/page.tsx
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -8,12 +10,11 @@ export async function generateStaticParams() {
   const dir = path.join(process.cwd(), 'src/app/articles');
   const files = fs.readdirSync(dir).filter(file => file.endsWith('.mdx'));
 
-  return files.map((file) => ({
+  return files.map(file => ({
     slug: file.replace(/\.mdx$/, ''),
   }));
 }
 
-// ✅ NO custom type, NO PageProps
 export default async function Page({
   params,
 }: {
