@@ -4,7 +4,7 @@ import GestureLayout from "../../components/GestureLayout";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="p-8 min-h-screen flex flex-col">
+    <div className="p-8 sm:p-20 min-h-screen font-[family-name:var(--font-geist-sans)] flex flex-col items-center sm:items-start text-center sm:text-left">
       <main className="flex-grow">
         <GestureLayout>{children}</GestureLayout>
       </main>
