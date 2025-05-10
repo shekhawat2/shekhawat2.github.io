@@ -8,13 +8,13 @@ export async function generateStaticParams() {
   const dir = path.join(process.cwd(), 'src/app/articles');
   const files = fs.readdirSync(dir).filter(file => file.endsWith('.mdx'));
 
-  return files.map(file => ({
+  return files.map((file) => ({
     slug: file.replace(/\.mdx$/, ''),
   }));
 }
 
-// ✅ DON'T use PageProps, just inline the type
-export default async function MdxPostPage({
+// ✅ NO custom type, NO PageProps
+export default async function Page({
   params,
 }: {
   params: { slug: string };
@@ -30,9 +30,7 @@ export default async function MdxPostPage({
 
   return (
     <article className="prose max-w-none">
-      {data.title && (
-        <h1 className="text-3xl font-bold mb-6">{data.title || params.slug}</h1>
-      )}
+      <h1 className="text-3xl font-bold mb-6">{data.title || params.slug}</h1>
       <MDXRemote source={content} />
     </article>
   );
