@@ -1,5 +1,3 @@
-// src/app/articles/[slug]/page.tsx
-
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -29,6 +27,7 @@ export default async function Page({
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { content, data } = matter(fileContent);
 
+  // Make sure MDX content is passed properly and rendered.
   return (
     <article className="prose max-w-none">
       <h1 className="text-3xl font-bold mb-6">{data.title || params.slug}</h1>
